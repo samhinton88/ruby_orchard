@@ -1,54 +1,50 @@
 # More involved take on the classic orange tree challenge
 
-# Overall system uses on RootStock, Stem, Branch and Fruit models
+# Overall stem uses on RootStock, Stem, Branch and Fruit models
 
-# Variety to variety root stock profile behave as near constants
+# Variety to variety, a root stock profile behaves as a near constant
 
 # the limiting effect of hydraulic capacity of a tree is not yet known to science
 
-ORANGE_TREE_ROOT_STOCK_PROFILE = {
-  min_temp: 2,
-  drainage: 100,
-  ideal_PH: (60..65),
-  depth: 1.0,
-  spread: 2.0,
-  clay_content: (10..40),
-}
+require_relative 'scion'
+require_relative 'fruit'
+require_relative 'rootstock'
+require_relative 'data'
+
+
 class Tree
+  attr_reader :varietal_name, :root_stock, :count
+  @@orchard = []
+
+  def self.orchard
+    """
+    #{@@orchard.size} tree#{@@orchard.size == 1 ? '' : 's'} created from this class.
+    #{@@orchard.map { |tree| tree.varietal_name }}
+    """
+  end
+
   def initialize(root_stock)
-    @root_stock = root_stock
-  end
-end
+    @root_stock     = root_stock
+    @varietal_name  = root_stock.scion.fruit.profile[:varietal_name]
+    @age            = 0
 
-class RootStock
-
-  # initialized with a stem
-  def initialize(stem, profile)
-    @spread_area = 0
-    @depth = 0
-    @density = 0
-    @profile = profile
-  end
-end
-
-class Stem
-  attr_reader :age, :nutrition
-
-  def initialize()
-
+    @@orchard.push(self)
   end
 
-  # “Es ist dafür gesorgt, dass die Bäume nicht in den Himmel wachsen."
-  def grow
+  def to_s
+    """
+    Tree of Variety:  #{varietal_name}
+    root_stock:       #{root_stock}
+    scion:             #{root_stock.scion}
+    """
+  end
+
+  def live_day
+    @age += 1
 
   end
 end
 
 
 
-my_orange_tree = Tree.new(RootStock.new(Stem.new(), ORANGE_TREE_ROOT_STOCK_PROFILE))
 
-puts "object: #{my_orange_tree}"
-# puts "age: #{my_orange_tree.age}"
-# puts "nutrition: #{my_orange_tree.nutrition}"
-# puts "requirements: #{my_orange_tree.requirements}"

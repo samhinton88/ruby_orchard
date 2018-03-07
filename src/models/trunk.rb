@@ -13,6 +13,7 @@ class Trunk
   end
 
   def will_branch?
+    # presence of secondary meristem and its distance from the apical meristem
 
   end
 end

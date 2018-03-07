@@ -13,10 +13,10 @@ require_relative 'data'
 
 
 class Tree
-  attr_reader :varietal_name, :root_stock, :count, :family
+  attr_reader :varietal_name, :root_stock, :count, :family, :scion, :loc
   @@orchard = []
 
-  def self.orchard(mode=nil)
+  def self.orchard(mode = nil)
 
     return @@orchard if !mode
 
@@ -26,11 +26,12 @@ class Tree
     """
   end
 
-  def initialize(root_stock, loc)
-    @loc            = loc
+  def initialize(root_stock, scion)
     @root_stock     = root_stock
-    @varietal_name  = root_stock.scion.fruit_profile[:varietal_name]
-    @family         = root_stock.scion.fruit_profile[:family]
+    @loc            = root_stock.loc
+    @scion          = scion
+    @varietal_name  = scion.fruit_profile[:varietal_name]
+    @family         = scion.fruit_profile[:family]
     @age            = 0
 
     @@orchard.push(self)

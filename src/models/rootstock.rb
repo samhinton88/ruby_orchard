@@ -1,10 +1,11 @@
 # in effect the engine room of the tree
 
 class RootStock
-  attr_reader :scion
+  attr_reader :scion, :loc
 
   # initialized with a scion
-  def initialize(scion, soil_context, profile = {})
+  def initialize(soil_context, profile = {}, loc = { x: 0, y: 0 })
+    @loc          = loc
     @spread_area  = 0
     @depth        = 0
     @density      = 0

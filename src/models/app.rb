@@ -16,3 +16,6 @@ puts "orchard[0] trunk: #{orchard[0].scion.trunk}"
 puts "orchard[0] trunk size: #{orchard[0].scion.trunk.size}"
 puts "orchard[0] loc: #{orchard[0].loc}"
 puts "orchard[1] loc: #{orchard[1].loc}"
+
+tree = orchard[0]
+

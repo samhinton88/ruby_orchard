@@ -47,11 +47,16 @@ class Tree
 
   def live_day
     @age += 1
+    grow
 
   end
 
   def node_graph
     root_stock.scion.structure
+  end
+
+  def grow
+    scion.grow
   end
 end
 

@@ -10,9 +10,10 @@ SOIL_CONTEXT = {
   spread: 5,
 }
 
-ORANGE_TREE_ROOT_STOCK_PROFILE = {
+CLEOPATRA_MANDARIN_ROOT_STOCK_PROFILE = {
   min_temp: 2,
-  drainage: 100,
+  drought_resistence: 100,
+  propensity_for_pests: 0,
   ideal_PH: (60..65),
   depth: 1.0,
   spread: 2.0,
@@ -21,8 +22,17 @@ ORANGE_TREE_ROOT_STOCK_PROFILE = {
 }
 
 ORANGE_TREE_FRUIT_PROFILE = {
-  varietal_name: 'Orange',
+  varietal_name: 'Seville',
+  family: 'Orange',
   color_rgb: {r: 255, g: 165, b: 0},
-  shape: 'sphere'
+  shape: 'sphere',
+  leaf_season: 'evergreen'
+}
 
+APPLE_TREE_FRUIT_PROFILE = {
+  varietal_name: 'Discovery',
+  family: 'Apple',
+  color_rgb: {r: 177, g: 26, b: 30},
+  shape: 'sphere',
+  leaf_season: 'deciduous'
 }

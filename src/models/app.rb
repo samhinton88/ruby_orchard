@@ -1,8 +1,13 @@
 require_relative 'tree'
 
-my_scion = Scion.new(Fruit.new(ORANGE_TREE_FRUIT_PROFILE))
-my_root_stock = RootStock.new(my_scion, ORANGE_TREE_ROOT_STOCK_PROFILE, SOIL_CONTEXT)
-my_orange_tree = Tree.new(my_root_stock)
+orange_scion = Scion.new(ORANGE_TREE_FRUIT_PROFILE)
+orange_root_stock = RootStock.new(orange_scion, CLEOPATRA_MANDARIN_ROOT_STOCK_PROFILE, SOIL_CONTEXT)
+orange_orange_tree = Tree.new(orange_root_stock)
 
-puts "my_orange_tree: #{my_orange_tree}"
+apple_scion = Scion.new(APPLE_TREE_FRUIT_PROFILE)
+apple_root_stock = RootStock.new(apple_scion, CLEOPATRA_MANDARIN_ROOT_STOCK_PROFILE, SOIL_CONTEXT)
+apple_apple_tree = Tree.new(apple_root_stock)
+
+
+
 puts "Tree.orchard: #{Tree.orchard}"

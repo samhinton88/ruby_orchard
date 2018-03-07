@@ -13,19 +13,20 @@ require_relative 'data'
 
 
 class Tree
-  attr_reader :varietal_name, :root_stock, :count
+  attr_reader :varietal_name, :root_stock, :count, :family
   @@orchard = []
 
   def self.orchard
     """
     #{@@orchard.size} tree#{@@orchard.size == 1 ? '' : 's'} created from this class.
-    #{@@orchard.map { |tree| tree.varietal_name }}
+    #{@@orchard.map { |tree| "#{tree.varietal_name} #{tree.family}" }}
     """
   end
 
   def initialize(root_stock)
     @root_stock     = root_stock
-    @varietal_name  = root_stock.scion.fruit.profile[:varietal_name]
+    @varietal_name  = root_stock.scion.fruit_profile[:varietal_name]
+    @family         = root_stock.scion.fruit_profile[:family]
     @age            = 0
 
     @@orchard.push(self)

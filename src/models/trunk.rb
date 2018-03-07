@@ -2,8 +2,12 @@
 # apical meristem
 
 class Trunk
-  def initialize(scion)
+  attr_reader :scion, :size
+
+  def initialize(scion, size = 1)
     @scion = scion
+    @size  = size
+
   end
 
 

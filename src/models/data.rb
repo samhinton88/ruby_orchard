@@ -6,8 +6,9 @@ WEATHER_CONDITION = {
 
 SOIL_CONTEXT = {
   PH: 60,
-  depth: 5,
-  spread: 5,
+  nitrogen: 5,
+  magnesium: 5,
+  water: 100
 }
 
 CLEOPATRA_MANDARIN_ROOT_STOCK_PROFILE = {
@@ -17,8 +18,9 @@ CLEOPATRA_MANDARIN_ROOT_STOCK_PROFILE = {
   ideal_PH: (60..65),
   depth: 1.0,
   spread: 2.0,
-  clay_content: (10..40),
-  disease_resistance: 100
+  ideal_clay_content: (10..40),
+  disease_resistance: 100,
+  density: 1.0
 }
 
 ORANGE_TREE_FRUIT_PROFILE = {

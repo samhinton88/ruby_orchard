@@ -1,23 +1,19 @@
 # https://www.reddit.com/r/askscience/comments/1518gx/what_determines_whenwhere_a_branch_will_grow_on_a/
 # apical meristem
+require_relative 'stem'
 
-class Trunk
+class Trunk < Stem
   attr_reader :scion, :size
 
-  def initialize(scion, size = 1)
+  def initialize(scion)
+    super
     @scion = scion
-    @size  = size
-
   end
 
+  # def distribute(feed_object, photo_energy)
+  #   puts feed_object, photo_energy
+  # end
 
   private
-  def grow
 
-  end
-
-  def will_branch?
-    # presence of secondary meristem and its distance from the apical meristem
-
-  end
 end

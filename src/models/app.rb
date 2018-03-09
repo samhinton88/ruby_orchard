@@ -10,13 +10,16 @@ apple_apple_tree = Tree.new(apple_root_stock, apple_scion)
 
 orchard = Tree.orchard
 
-puts "Tree.orchard: #{orchard}"
-puts "orchard[0]: #{orchard[0]}"
-puts "orchard[0] trunk: #{orchard[0].scion.trunk}"
-puts "orchard[0] trunk size: #{orchard[0].scion.trunk.size}"
-puts "orchard[0] loc: #{orchard[0].loc}"
-puts "orchard[1] loc: #{orchard[1].loc}"
+# puts "Tree.orchard: #{orchard}"
+# puts "orchard[0]: #{orchard[0]}"
+# puts "orchard[0] trunk: #{orchard[0].scion.trunk}"
+# puts "orchard[0] trunk size: #{orchard[0].scion.trunk.size}"
+# puts "orchard[0] loc: #{orchard[0].loc}"
+# puts "orchard[1] loc: #{orchard[1].loc}"
+
 
 tree = orchard[0]
 tree.grow
 tree
+
+puts "Tree.root_stock #{tree.scion}"

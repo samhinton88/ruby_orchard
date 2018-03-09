@@ -17,7 +17,6 @@ class Tree
   @@orchard = []
 
   def self.orchard(mode = nil)
-
     return @@orchard if !mode
 
     """
@@ -48,7 +47,6 @@ class Tree
   def live_day
     @age += 1
     grow
-
   end
 
   def node_graph

@@ -18,4 +18,5 @@ puts "orchard[0] loc: #{orchard[0].loc}"
 puts "orchard[1] loc: #{orchard[1].loc}"
 
 tree = orchard[0]
-
+tree.grow
+tree

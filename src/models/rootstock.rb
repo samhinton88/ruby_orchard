@@ -16,4 +16,8 @@ class RootStock
   def grow
 
   end
+
+  def feed_scion
+
+  end
 end

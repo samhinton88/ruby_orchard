@@ -4,12 +4,12 @@ class RootStock
   attr_reader :scion, :loc, :depth, :density, :spread_area, :soil_context
 
   # initialized with a scion
-  def initialize(soil_context, profile = {}, loc = { x: 0, y: 0 })
+  def initialize(soil_context, profile = {}, loc = { x: 0, y: 0, z: 0 })
     # puts profile
     @loc          = loc
-    @spread_area  = profile['spread'] || 0
-    @depth        = profile['depth '] || 0
-    @density      = profile['density'] || 0
+    @spread_area  = profile[:spread] || 0
+    @depth        = profile[:depth] || 0
+    @density      = profile[:density] || 0
     @profile      = profile
     @scion        = scion
     @soil_context = soil_context

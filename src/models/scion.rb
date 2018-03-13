@@ -9,7 +9,8 @@ class Scion
   def initialize(fruit_profile, root_stock, trunk = nil)
     @root_stock       = root_stock
     @fruit_profile    = fruit_profile
-    @trunk            = trunk ? trunk : Trunk.new(self, Node.new(root_stock.loc))
+    @trunk            = trunk ? trunk : Trunk.new(Node.new(root_stock.loc), self)
+    self.trunk.parent = self
     @height           = 0
     @branch_structure = {}
     @diseases         = []

@@ -7,10 +7,9 @@ require_relative 'node'
 class Trunk < Stem
   attr_reader :growth_point
 
-  def initialize(parent, origin_node)
+  def initialize(origin_node, parent = nil)
     super(parent, origin_node)
-    puts "initialize trunk from parent: #{parent} with origin_node #{origin_node}"
-    @growth_point = ApicalMeristem.new()
+    @growth_point = ApicalMeristem.new(origin_node)
   end
 
 

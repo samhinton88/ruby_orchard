@@ -17,8 +17,11 @@ class Stem
 
   def distribute(feed_object, photo_energy)
     # distribute organic resources throughout stem and its children
-    growth = ((feed_object[:vigour] * photo_energy) / length)
+    growth = ((feed_object[:vigour] * photo_energy))
     self.length += growth
+    displacement = {}
+    vector.keys.each { |axis| displacement[axis.to_sym] = vector[axis.to_sym] * growth }
+    self.growth_point.repositon(displacement)
     children.each { |child| child.distribute(feed_object, photo_energy) }
   end
 
@@ -32,10 +35,12 @@ class Stem
   def describe(storage = [])
     # return nodes and nodes of children recursively
     storage.push({
+      object: self,
       origin: self.origin_node,
       terminus: self.growth_point
-      })
-    children.each {|child| child.describe }
+    })
+
+    children.each {|child| child.describe(storage) }
     storage
   end
 
@@ -59,8 +64,8 @@ class Stem
       # to do
     end
 
-    y = (((arg_z - oz) / vz) * vy)) + oy
-    x = (((arg_z - oz) / vz) * vx)) + ox
+    y = ((((arg_z - oz) / vz) * vy)) + oy
+    x = ((((arg_z - oz) / vz) * vx)) + ox
 
     return { x: x, y: y, z: arg_z }
   end

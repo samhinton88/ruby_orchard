@@ -1,6 +1,6 @@
-class ApicalMeristem
-  """Holds large quantity of stem cells within the growing plant."""
-  def initialize
+require_relative 'growth_point'
 
-  end
+class ApicalMeristem < GrowthPoint
+  """Holds large quantity of stem cells within the growing plant."""
+
 end

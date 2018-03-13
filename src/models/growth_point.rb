@@ -3,13 +3,17 @@ class GrowthPoint
 
   def initialize(origin_node)
     @loc = {
-      x: origin_node[:x],
-      y: origin_node[:y],
-      z: origin_node[:z]
+      x: origin_node.x,
+      y: origin_node.y,
+      z: origin_node.z
     }
   end
 
-  def update(new_loc)
-    self.loc = new_loc
+  def to_s
+    "growth point at #{loc}"
+  end
+
+  def repositon(given_loc)
+    given_loc.keys.each { |axis| self.loc[axis.to_sym] += given_loc[axis.to_sym] }
   end
 end

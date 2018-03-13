@@ -10,6 +10,7 @@ require_relative 'scion'
 require_relative 'fruit'
 require_relative 'rootstock'
 require_relative 'data'
+require_relative 'trunk'
 
 
 class Tree
@@ -40,7 +41,7 @@ class Tree
     """
     Tree of Variety:  #{varietal_name}
     root_stock:       #{root_stock}
-    scion:             #{root_stock.scion}
+    scion:             #{scion}
     """
   end
 
